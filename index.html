@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+
+    #login{
+        width: 100px;
+        height: 55px;
+        font-size: 25px;
+        background-color: #194cff;
+        color: white;
+        margin: 30px 50px;
+        border: 2px solid black;
+    }
+
+    .loginmodel{
+        width:30% ;
+        height: 700px;
+        padding: 40px;
+        position: fixed;
+        top: 0px;
+        transition: 0.5s;
+        right: -1000px;
+        background-color: #eee4e4;
+        border-radius: 10px;
+    }
+    .loginmodel span{
+        font-size: 30px;
+        border: 2px solid;
+        background-color: red;
+        cursor: pointer;
+        border: none;
+    }
+
+    .headdingmodel{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 100px;
+    }
+
+     .headdingmodel h3{
+        font-size: 20px;
+     }
+
+     .loginmodel form {
+        margin-top: 50px;
+     }
+
+      .loginmodel form label{
+        display: block;
+        font-size: 25px;
+      }
+
+       .loginmodel form input{
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        margin-top: 5px;
+        font-size: 20px;
+       }
+
+       .loginmodel form button{
+        width: 100%;
+        margin-top: 20px;
+        padding: 25px 0px;
+        background-color: #194cff;
+        font-size: 20px;
+        color: white;
+        border: none;
+       }
+
+        .loginmodel form p{
+            margin-top: 20px;
+        }
+
+        .showmodel{
+            right: 0px;
+        }
+   </style>
+</head>
+<body>
+     <button id="login">login</button>
+    <div class="loginmodel ">
+        <span>&times;close</span>
+        <div class="headdingmodel">
+            <h1>Login</h1>
+            <p>Use email, insted</p>
+        </div>
+        <form>
+            <label for="mobilenumber">Mobile Number / Email</label>
+            <input  type="text" pattern="[6-9][0-9]{10}[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"required placeholder="Enter 10 digit monile number/Email"/>
+            <button id="userlogin" type="submit">Login</button>
+            <p>Dont have an account? <a href="##">Create account</a></p>
+        </form>
+    </div>
+</body>
+    <script>
+        let loginbox = document.getElementById("login")
+        let loginmodelelement = document.querySelector(".loginmodel")
+        let closebtn = document.querySelector(".loginmodel span")
+        let userclick = document.querySelector("#userlogin")
+    
+
+        loginbox.addEventListener('click',()=>{
+            loginmodelelement.classList.add('showmodel')
+        })
+
+        closebtn.addEventListener('click',()=>{
+            loginmodelelement.classList.remove('showmodel')
+        })
+
+    </script>
+</html>
